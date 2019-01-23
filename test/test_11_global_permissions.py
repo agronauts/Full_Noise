@@ -102,7 +102,7 @@ class TestGlobalPermission:
         tag = fred.tag_recording(recording.recordingId, {"animal": "cat"})
         
         print("  And delete a tag on the recording")
-        fred.delete_tag(1)
+        fred.delete_tag(tag['tagId'])
 
         print("  And delete the recording")
         fred.delete_recording(recording)

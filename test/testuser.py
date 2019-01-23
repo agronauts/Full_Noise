@@ -166,7 +166,7 @@ class TestUser:
         self._userapi.get_user_details(user.username)
 
     def tag_recording(self, recordingId, tagDictionary):
-        self._userapi.tag_recording(recordingId, tagDictionary)
+        return self._userapi.tag_recording(recordingId, tagDictionary)
 
     def can_see_audio_recording(self, recording):
         self._userapi.get_audio(recording.recordingId)
