@@ -145,6 +145,9 @@ class TestUser:
     def delete_recording(self, recording):
         self._userapi.delete_recording(recording.recordingId)
 
+    def delete_tag(self, tagId):
+        self._userapi.delete_tag(tagId)
+
     def update_recording(self, recording, **updates):
         self._userapi.update_recording(recording.recordingId, updates)
 

@@ -173,7 +173,13 @@ class UserAPI(APIBase):
         url = urljoin(self._baseurl, "/api/v1/tags/")
         tagData = {"tag": json.dumps(tagDictionary), "recordingId": recordingId}
         response = requests.post(url, headers=self._auth_header, data=tagData)
-        response.raise_for_status()
+        return self._check_response(response)
+
+    def delete_tag(self, tagId):
+        url = urljoin(self._baseurl, "/api/v1/tags/")
+        tagData = {"tagId": tagId}
+        response = requests.delete(url, headers=self._auth_header, data=tagData)
+        return self._check_response(response)
 
     def query_events(self, deviceId=None, startTime=None, endTime=None, limit=20):
         return self._query(
